@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -24,8 +24,38 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
+// $scope.names= $http.get("https://cincysaitemple.org/menu.json")
+  
   ///////////////////////
+$scope.names = [
+	{name:'Home',country:'https://cincysaitemple.org/'},
+	{name:'Canendar',country:'https://cincysaitemple.org/calendar/'},
+	 {name:'priest-service',country:'https://cincysaitemple.org/priest-service/'},
+	 {name:'daily-pooja-services',country:'https://cincysaitemple.org/daily-pooja-services/'},
+	 {name:'charity',country:'https://cincysaitemple.org/charity/'},
+	 {name:'vastralankar',country:'https://cincysaitemple.org/vastralankar/'},
+	 {name:'Donations',country:'https://cincysaitemple.org/donate-2/'},
+	 {name:'Signup',country:'https://cincysaitemple.org/signup/'},
+	 {name:'Signup as Sai Sevak',country:'https://docs.google.com/forms/d/e/1FAIpQLSei82Lnz6Lq2fq5W9VHUK1wJv1CzYwtmSTBQ7V-j2WwSbL_qA/viewform'},
+	 {name:'Library Sevak',country:'https://docs.google.com/forms/d/e/1FAIpQLSeP8FhCT5qq_gjd7gImipR7IsydFRPCqOlpfquV9AYEZ6ebNg/viewform'},
+	 {name:'Contact Us',country:'https://cincysaitemple.org/contact/'},
+	 {name:'Membership',country:'https://cincysaitemple.org/membership-form/'},
+	 {name:'Galery',country:'https://cincysaitemple.org/gallery/'}
+	
+    ];
 
+$scope.saisitepopup = function(url)
+{
+ // Open in app browser
+
+ window.open(url,'_blank'); 
+};
+	
+$scope.openInExternalBrowser = function()
+{
+
+ window.open('https://cincysaitemple.org/','_blank'); 
+};
 
   ///////////////////////
   
